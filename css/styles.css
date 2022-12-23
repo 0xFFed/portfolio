@@ -1,0 +1,146 @@
+/* ############################ */
+/* ########## GLOBAL ########## */
+/* ############################ */
+
+:root {
+    --button-color: #0066FF;
+    --button-hovered-color: #3887fd;
+    --button-pressed-color: #044dbb;
+    --light-bg-color: #282828;
+    --bg-color: #1F1F1F;
+    --dark-bg-color: #0f0f0f;
+    --header-bg-color: #001230;
+    --grey: #a0a0a0;
+    --standard-shadow: 0px 12px 4px 1px rgba(0, 0, 0, .3);
+    --nav-height: 80px;
+    --button-text-size: 18px;
+    --small-button-text-size: 15px;
+    --icons-size: 24px;
+    --small-icons-size: 20px;
+    --title-text-size: 30px;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p, a, h1, h2, h3 {
+    font-family: 'Quicksand', 'Raleway', 'Ubuntu', 'Sans-serif';
+    color: #FFFFFF;
+}
+
+.site-font {
+    font-family: 'Quicksand';
+}
+
+body {
+    background-color: var(--dark-bg-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: #DDDDDD;
+}
+
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+    box-shadow: none;
+
+	border: none;
+	padding: 0;
+
+	font: inherit;
+	cursor: pointer;
+	outline: none; 
+}
+
+
+
+/* ############################## */
+/* ########## SPECIFIC ########## */
+/* ############################## */
+
+/* ########## SECTIONS ########## */
+
+.frame {
+    height: 100%;
+    width: 100%;
+
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    transition: 0.5s ease-in-out;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    scroll-snap-align: start;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 25px;
+    place-items: center;
+
+    width: 80%;
+    padding: 1%;
+
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    border: 1px solid orange;
+}
+
+.card {
+    border-radius: 5px;
+    border: 1px solid red;
+}
+
+
+/* ########## SCROLLBAR ########## */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+/* button */
+::-webkit-scrollbar-button {
+display : none;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+border-radius: 10px;
+}
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+}
