@@ -15,10 +15,29 @@ flipButtons.forEach((button) => {
 
         card.classList.add('flipped');
         container.classList.add('selected');
+        container.addEventListener('animationend', function firstAnimationEvent() {
+            for(const cont of gallery.children) {
+                if(cont != container) cont.classList.add('shadowed');
+            }
 
-        for(const cont of gallery.children) {
-            if(cont != container) cont.classList.add('shadowed');
-        };
+            container.addEventListener('mouseleave', function mouseLeaveEvent() {
+                this.removeEventListener('mouseleave', mouseLeaveEvent);
+                if(container.classList.contains('selected') && !container.classList.contains('maximized')) {
+                    card.classList.remove('flipped');
+                    container.classList.add('unselected');
+                    container.addEventListener('animationend', function secondAnimationEvent() {
+                        this.removeEventListener('animationend', secondAnimationEvent);
+                        for(const cont of gallery.children) {
+                            cont.classList.remove('shadowed');
+                        }
+                        container.classList.remove('selected');
+                        container.classList.remove('unselected');
+                    });
+                }
+            });
+        });
+
+        
 
         // container.addEventListener('mouseleave', () => {
         //     card.classList.remove('flipped');

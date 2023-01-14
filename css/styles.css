@@ -168,7 +168,7 @@ section {
 }
 
 .card-container:hover {
-    transform: translateY(-1rem);
+    transform: translate(0, -1rem);
 }
 
 .card-container:hover~.card-container, .selected~.card-container {
@@ -192,10 +192,6 @@ section {
     transition: transform 1s ease;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-}
-
-.flipped {
-    transform: rotateY(180deg);
 }
 
 .card-front, .card-back {
@@ -301,10 +297,19 @@ section {
 
 /* ########## GENERIC ########## */
 
+.flipped {
+    transform: rotateY(180deg) scale(1.1);
+}
+
 .selected {
     overflow-y: visible;
 
     animation: step-forward 500ms;
+    animation-fill-mode: forwards;
+}
+
+.unselected {
+    animation: step-backwards 500ms;
     animation-fill-mode: forwards;
 }
 
@@ -333,14 +338,27 @@ section {
 
 @keyframes step-forward {
     50% {
-        transform: translate(-3rem, -1rem) scale(1);
+        transform: translate(-3rem, 0);
 
         z-index: 0;
     }
     100% {
-        transform: translate(0, -1rem) scale(1.1);
+        transform: translate(0, 0);
 
         z-index: 1;
+    }
+}
+
+@keyframes step-backwards {
+    50% {
+        transform: translate(-3rem, 0);
+
+        z-index: 1;
+    }
+    100% {
+        transform: translate(0, 0);
+
+        z-index: 0;
     }
 }
 
