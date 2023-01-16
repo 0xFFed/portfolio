@@ -13,40 +13,49 @@ flipButtons.forEach((button) => {
         let gallery = container.parentElement;
         if(!gallery) {console.error('flip script: gallery element not found'); return;}
 
-        card.classList.add('flipped');
+
+        // Function handling the behavior regarding the flip button
+        function handleFlipBehavior() {
+            if(container.classList.contains('selected') && !container.classList.contains('maximized')) {
+                card.classList.remove('flipped-zoomed');
+                container.classList.add('unselected');
+                container.addEventListener('animationend', function secondAnimationEvent() {
+                    this.removeEventListener('animationend', secondAnimationEvent);
+                    for(const cont of gallery.children) {
+                        cont.classList.remove('shadowed');
+                    }
+                    container.classList.remove('selected');
+                    container.classList.remove('unselected');
+                });
+            }
+        }
+
+        
+        // adding flipped status
+        card.classList.add('flipped-zoomed');
         container.classList.add('selected');
         container.addEventListener('animationend', function firstAnimationEvent() {
             for(const cont of gallery.children) {
                 if(cont != container) cont.classList.add('shadowed');
             }
 
+            // adding event listener for mouse-out event
             container.addEventListener('mouseleave', function mouseLeaveEvent() {
                 this.removeEventListener('mouseleave', mouseLeaveEvent);
-                if(container.classList.contains('selected') && !container.classList.contains('maximized')) {
-                    card.classList.remove('flipped');
-                    container.classList.add('unselected');
-                    container.addEventListener('animationend', function secondAnimationEvent() {
-                        this.removeEventListener('animationend', secondAnimationEvent);
-                        for(const cont of gallery.children) {
-                            cont.classList.remove('shadowed');
-                        }
-                        container.classList.remove('selected');
-                        container.classList.remove('unselected');
-                    });
+
+                handleFlipBehavior();
+            });
+
+            // adding event listener for click-out event
+            container.addEventListener('focusout', function focusOutEvent(event) {
+                if(container.contains(event.target)) {
+                    console.log("in");
+                    return;
                 }
+                this.removeEventListener('focusout', focusOutEvent);
+                
+                handleFlipBehavior();
             });
         });
-
-        
-
-        // container.addEventListener('mouseleave', () => {
-        //     card.classList.remove('flipped');
-        //     container.classList.remove('selected');
-        // });
-
-        // container.addEventListener('focusout', () => {
-        //     card.classList.remove('flipped');
-        //     container.classList.remove('selected');
-        // });
     });
 });

@@ -18,21 +18,31 @@ if(expandButtons) expandButtons.forEach((button) => {
 
         button.classList.add('hidden');
 
-        const contLeft = container.style.left;
-        const contTop = container.style.top;
+        // container.style.transform = 'translate('+distanceFromCenter+'px, 0)';
+        // gallery.classList.add('no-padding');
+        for(const cont of gallery.children) {
+            if(cont != container) cont.classList.add('hidden');
+        }
         container.classList.add('maximized');
-        container.style.left = contLeft;
-        container.style.top = contTop;
+        container.classList.remove('hoverable');
+        card.classList.add('flipped');
+        container.addEventListener('animationend', function onAnimation() {
+            container.removeEventListener('animationend', onAnimation);
+            container.classList.add('centered');
+        });
 
-        // setInterval(() => {
-        //     if(card.getBoundingClientRect().left < gallery.getBoundingClientRect().left) {
-        //         console.log("card left bound: "+card.getBoundingClientRect().left)
-        //         leftScroll.click();
-        //     }
-        //     else if(card.getBoundingClientRect().right > gallery.getBoundingClientRect().right) {
-        //         console.log("card right bound: "+card.getBoundingClientRect().right)
-        //         rightScroll.click();
-        //     }
-        // }, 500);
+        console.log
+
+        document.addEventListener('keydown', function closeCard(e) {
+            if(e.key == 'Escape') {
+                console.log("Escape key pressed");
+                button.classList.remove('hidden');
+                for(const cont of gallery.children) cont.classList.remove('hidden');
+                container.classList.remove('maximized');
+                container.classList.add('hoverable');
+                card.classList.remove('flipped');
+                container.classList.remove('centered');
+            }
+        });
     });
 });

@@ -21,7 +21,9 @@
 }
 
 *, *::before, *::after {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -106,6 +108,8 @@ section {
 /* gallery */
 
 .gallery-frame {
+    position: relative;
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -118,6 +122,8 @@ section {
     overflow: visible;
 
     padding: 1%;
+
+    border: 1px solid purple;
 }
 
 .side-scroll {
@@ -138,11 +144,10 @@ section {
     width: 90%;
     height: 100%;
 
-    padding: 2rem;
+    padding: 0 2rem;
 
-    scroll-snap-type: x mandatory;
     overflow-x: scroll;
-    overflow-y: visible;
+    overflow-y: hidden;
 
     border: 1px solid gold;
     border-radius: 10px;
@@ -159,16 +164,11 @@ section {
 
     -webkit-filter: brightness(1) blur(0);
 
-    scroll-snap-align: start;
-
     border-radius: 10px;
 
     transition: all 250ms ease;
     perspective: 1000px;
-}
-
-.card-container:hover {
-    transform: translate(0, -1rem);
+    transform-origin: center;
 }
 
 .card-container:hover~.card-container, .selected~.card-container {
@@ -246,7 +246,7 @@ section {
     border-bottom-right-radius: inherit;
 
     transform: translateY(100%);
-    transform-origin: center;
+    transform-origin: left;
     transition: transform 0.5s ease;
 
     overflow: hidden;
@@ -297,7 +297,15 @@ section {
 
 /* ########## GENERIC ########## */
 
+.hoverable:hover {
+    transform: translate(0, -1rem);
+}
+
 .flipped {
+    transform: rotateY(180deg);
+}
+
+.flipped-zoomed {
     transform: rotateY(180deg) scale(1.1);
 }
 
@@ -314,18 +322,31 @@ section {
 }
 
 .maximized {
-    max-width: 100%;
-    max-height: 100%;
+    aspect-ratio: auto;
+
+    animation: maximize 500ms;
 
     min-width: 100%;
-    min-height: 100%;
 
-    aspect-ratio: auto;
+    margin-left: 0 !important;
 }
 
 .shadowed {
     -webkit-filter: brightness(60%) blur(0.2rem);
     z-index: -1;
+}
+
+.collapsed {
+    height: 0;
+    width: 0;
+}
+
+.no-padding {
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+
+    padding: 0;
 }
 
 .hidden {
