@@ -17,12 +17,11 @@ if(expandButtons) expandButtons.forEach((button) => {
         if(!leftScroll || ! rightScroll) {console.error('expand script: scroll buttons not found'); return;}
 
         button.classList.add('hidden');
-
-        // container.style.transform = 'translate('+distanceFromCenter+'px, 0)';
-        // gallery.classList.add('no-padding');
         for(const cont of gallery.children) {
-            if(cont != container) cont.classList.add('hidden');
+            if(cont != container) cont.classList.add('minimized');
+            cont.classList.remove('coverable');
         }
+
         container.classList.add('maximized');
         container.classList.remove('hoverable');
         card.classList.add('flipped');
@@ -31,13 +30,14 @@ if(expandButtons) expandButtons.forEach((button) => {
             container.classList.add('centered');
         });
 
-        console.log
-
         document.addEventListener('keydown', function closeCard(e) {
             if(e.key == 'Escape') {
                 console.log("Escape key pressed");
                 button.classList.remove('hidden');
-                for(const cont of gallery.children) cont.classList.remove('hidden');
+                for(const cont of gallery.children) {
+                    cont.classList.remove('minimized');
+                    cont.classList.add('coverable');
+                }
                 container.classList.remove('maximized');
                 container.classList.add('hoverable');
                 card.classList.remove('flipped');

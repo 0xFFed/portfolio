@@ -144,7 +144,7 @@ section {
     width: 90%;
     height: 100%;
 
-    padding: 0 2rem;
+    padding: 1px 2rem;
 
     overflow-x: scroll;
     overflow-y: hidden;
@@ -168,14 +168,14 @@ section {
 
     transition: all 250ms ease;
     perspective: 1000px;
-    transform-origin: center;
+    transform-origin: left;
 }
 
 .card-container:hover~.card-container, .selected~.card-container {
     transform:translateX(5rem);
 }
 
-.card-container:not(:first-child) {
+.coverable:not(:first-child) {
     margin-left: -5rem;
 }
 
@@ -324,11 +324,16 @@ section {
 .maximized {
     aspect-ratio: auto;
 
-    animation: maximize 500ms;
-
     min-width: 100%;
 
     margin-left: 0 !important;
+
+    animation: maximize 500ms;
+}
+
+.minimized {
+    min-width: 0 !important;
+    max-width: 0 !important;
 }
 
 .shadowed {
@@ -347,6 +352,11 @@ section {
     vertical-align: middle;
 
     padding: 0;
+}
+
+.centered {
+    justify-self: center;
+    align-self: center;
 }
 
 .hidden {
