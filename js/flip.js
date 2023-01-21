@@ -14,8 +14,8 @@ flipButtons.forEach((button) => {
         if(!gallery) {console.error('flip script: gallery element not found'); return;}
 
 
-        // Function handling the behavior regarding the flip button
-        function handleFlipBehavior() {
+        // Function handling the unflipping of the card
+        function handleUnflipBehavior() {
             if(container.classList.contains('selected') && !container.classList.contains('maximized')) {
                 card.classList.remove('flipped-zoomed');
                 container.classList.add('unselected');
@@ -42,19 +42,15 @@ flipButtons.forEach((button) => {
             // adding event listener for mouse-out event
             container.addEventListener('mouseleave', function mouseLeaveEvent() {
                 this.removeEventListener('mouseleave', mouseLeaveEvent);
-
-                handleFlipBehavior();
+                handleUnflipBehavior();
             });
 
             // adding event listener for click-out event
-            container.addEventListener('focusout', function focusOutEvent(event) {
-                if(container.contains(event.target)) {
-                    console.log("in");
-                    return;
+            document.addEventListener('click', function focusOutEvent(event) {
+                if(!container.contains(event.target)) {
+                    handleUnflipBehavior();
+                    this.removeEventListener('click', focusOutEvent);
                 }
-                this.removeEventListener('focusout', focusOutEvent);
-                
-                handleFlipBehavior();
             });
         });
     });

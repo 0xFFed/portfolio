@@ -211,19 +211,13 @@ section {
     backface-visibility: hidden;
 }
 
+/* card-front specific */
+
 .card-front {
     background-color: green;
 
     transition: 500ms ease;
 }
-
-.card-back {
-    background-color: gold;
-
-    transform: rotateY(180deg);
-}
-
-/* card-content */
 
 .card-content {
     background: linear-gradient(
@@ -294,6 +288,75 @@ section {
 }
 
 
+/* card-back specific */
+
+.card-back {
+    background-color: gold;
+
+    justify-content: space-between;
+
+    padding: 2% 3%;
+
+    overflow-y: scroll; 
+
+    transform: rotateY(180deg);
+}
+
+.exit {
+    background-color: red;
+
+    position: absolute;
+    right: 4%;
+    top: 5%;
+
+    aspect-ratio: 1 !important;
+
+    transition: all 0.5s ease;
+
+    opacity: 1;
+}
+
+.project-title {
+    position: relative;
+
+    width: max-content;
+    max-width: 100%;
+
+    margin-bottom: 5%;
+
+    border: 1px solid red;
+}
+
+.long-desc {
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 2%;
+
+    border: 1px solid green;
+}
+
+.info-banner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+
+    border: 1px solid blue;
+}
+
+.proj-status {
+    display: flex;
+    flex-direction: column;
+
+    text-align: right;
+
+    width: fit-content;
+}
+
+
 
 /* ########## GENERIC ########## */
 
@@ -325,6 +388,7 @@ section {
     aspect-ratio: auto;
 
     min-width: 100%;
+    max-width: 100%;
 
     margin-left: 0 !important;
 
@@ -332,8 +396,8 @@ section {
 }
 
 .minimized {
-    min-width: 0 !important;
-    max-width: 0 !important;
+    min-width: 0;
+    max-width: 0;
 }
 
 .shadowed {
@@ -354,9 +418,8 @@ section {
     padding: 0;
 }
 
-.centered {
-    justify-self: center;
-    align-self: center;
+.invisible {
+    opacity: 0;
 }
 
 .hidden {

@@ -12,37 +12,60 @@ if(expandButtons) expandButtons.forEach((button) => {
         if(!container) {console.error('expand script: container element not found'); return;}
         const gallery = container.parentElement;
         if(!gallery) {console.error('expand script: gallery element not found'); return;}
-        const leftScroll = gallery.previousElementSibling;
-        const rightScroll = gallery.nextElementSibling;
-        if(!leftScroll || ! rightScroll) {console.error('expand script: scroll buttons not found'); return;}
+        const exitButton = card.querySelector('.exit');
+        const projTitle = card.querySelector('.project-title');
+        const infoBanner = card.querySelector('.info-banner');
 
-        button.classList.add('hidden');
-        for(const cont of gallery.children) {
-            if(cont != container) cont.classList.add('minimized');
-            cont.classList.remove('coverable');
+        // calling the card maximization function
+        maximize(button, gallery, container, card, exitButton, projTitle, infoBanner);
+
+
+
+        // function handling card maximization
+        function maximize(button, gallery, container, card, exitButton, projTitle, infoBanner) {
+            button.classList.add('hidden');
+            for(const cont of gallery.children) {
+                if(cont != container) cont.classList.add('minimized');
+                cont.classList.remove('coverable');
+            }
+
+            container.classList.add('maximized');
+            container.classList.remove('hoverable');
+            card.classList.add('flipped');
+            exitButton.classList.remove('invisible');
+            projTitle.classList.remove('hidden');
+            infoBanner.classList.remove('hidden');
+
+
+            // adding event listener to ESCAPE key-press
+            document.addEventListener('keydown', function closeCard(e) {
+                if(e.key == 'Escape') {
+                    document.removeEventListener('keydown', closeCard);
+                    redimension(button, container, card, gallery, exitButton, projTitle, infoBanner);
+                }
+            });
+
+
+            // adding event listener to EXIT button-press
+            exitButton.addEventListener('click', () => {
+                redimension(button, container, card, gallery, exitButton, projTitle, infoBanner);
+            });
         }
 
-        container.classList.add('maximized');
-        container.classList.remove('hoverable');
-        card.classList.add('flipped');
-        container.addEventListener('animationend', function onAnimation() {
-            container.removeEventListener('animationend', onAnimation);
-            container.classList.add('centered');
-        });
 
-        document.addEventListener('keydown', function closeCard(e) {
-            if(e.key == 'Escape') {
-                console.log("Escape key pressed");
-                button.classList.remove('hidden');
-                for(const cont of gallery.children) {
-                    cont.classList.remove('minimized');
-                    cont.classList.add('coverable');
-                }
-                container.classList.remove('maximized');
-                container.classList.add('hoverable');
-                card.classList.remove('flipped');
-                container.classList.remove('centered');
+        // function handling card re-dimentioning
+        function redimension(button, container, card, gallery, exitButton, projTitle, infoBanner) {
+            exitButton.classList.add('invisible');
+            for(const cont of gallery.children) {
+                cont.classList.remove('minimized');
+                cont.classList.add('coverable');
             }
-        });
+            container.classList.remove('maximized');
+            container.classList.add('hoverable');
+            card.classList.remove('flipped');
+            projTitle.classList.add('hidden');
+            infoBanner.classList.add('hidden');
+            button.classList.remove('hidden');
+        }
     });
 });
