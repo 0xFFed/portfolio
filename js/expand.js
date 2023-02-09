@@ -8,16 +8,20 @@ if(expandButtons) expandButtons.forEach((button) => {
     button.addEventListener('click', () => {
         const card = button.parentElement.parentElement;
         if(!card) {console.error('expand script: card element not found'); return;}
-        const container = card.parentElement;
-        if(!container) {console.error('expand script: container element not found'); return;}
-        const gallery = container.parentElement;
+        const cardContainer = card.parentElement;
+        if(!cardContainer) {console.error('expand script: container element not found'); return;}
+        const gallery = cardContainer.parentElement;
         if(!gallery) {console.error('expand script: gallery element not found'); return;}
         const exitButton = card.querySelector('.exit');
+        if(!exitButton) {console.error('expand script: exit button not found'); return;}
         const projTitle = card.querySelector('.project-title');
+        if(!projTitle) {console.error('expand script: project title element not found'); return;}
         const infoBanner = card.querySelector('.info-banner');
+        if(!infoBanner) {console.error('expand script: info banner element not found'); return;}
 
         // calling the card maximization function
-        maximize(button, gallery, container, card, exitButton, projTitle, infoBanner);
+        if(cardContainer.classList.contains('selected')) maximize(button, gallery, cardContainer, card, exitButton, projTitle, infoBanner);
+        else return;
 
 
 
