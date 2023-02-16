@@ -7,8 +7,7 @@
         <link rel="stylesheet" href="css/styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <script defer src="./js/scroll.js"></script>
         <script defer src="./js/card_animations.js"></script>
@@ -25,12 +24,68 @@
 
             <!-- MAIN -->
 
-            <section class="category">
-                <h1>DESCRIZIONE</h1>
+            <section id="hero-section" class="category">
+                <video id="loadvid" autoplay muted playsinline plays-inline>
+                    <!-- <source src="./graphics/Backgrounds/background.mp4" type="video/mp4"> -->
+                </video>
+
+                <div id="hero-title-container">
+                    <div id="hero-title-wrapper">
+                        <h1 id="name" class="hero-title">Fred.ef</h1>
+                        <div id="expanding-desc-container">
+                            <div class="bracket">
+                                <p>[</p>
+                            </div>
+                            <div id="expanding-desc">
+                                <h1 class="hero-title video-text">FULL STACK,</h1>
+                                <h1 class="hero-title video-text">BLOCKCHAIN,</h1>
+                                <h1 class="hero-title video-text">SYSTEM</h1>
+                            </div>
+                            <div class="bracket">
+                                <p>]</p>
+                            </div>
+                        </div>
+                        <div class="pack-h">
+                            <h1 class="hero-title">&nbsp&nbspDEVELOPER</h1><h1 id="underscore" class="hero-title">&nbsp_</h1>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="right-panel" class="hero-side-panel">
+                    <div class="hero-button-rack">
+                        <button class="hero-panel-button hoverable">
+                            <img src="./graphics/Icons/github_black.png">
+                        </button>
+                        <button class="hero-panel-button hoverable">
+                            <img src="./graphics/Icons/linkedin_black.png">
+                        </button>
+                        <button class="hero-panel-button hoverable">
+                            <img src="./graphics/Icons/discord_black.png">
+                        </button>
+                        <button class="hero-panel-button hoverable">
+                            <img src="./graphics/Icons/mail_black.png">
+                        </button>
+                    </div>
+                </div>
             </section>
 
-            <section class="category">
-                <h1>PAGE 1</h1>
+            <!-- <div id="expanding-desc">
+                <div class="hero-title-div">
+                    <video src="./graphics/Backgrounds/vsc.mp4" autoplay loop muted playsinline plays-inline></video>
+                    <h1 class="hero-title video-text">WEB</h1>
+                </div>
+                <div class="hero-title-div">
+                    <video src="./graphics/Backgrounds/blocks.mp4" autoplay loop muted playsinline plays-inline></video>
+                    <h1 class="hero-title video-text">BLOCKCHAIN</h1>
+                </div>
+                <div class="hero-title-div">
+                    <video src="./graphics/Backgrounds/code.mp4" autoplay loop muted playsinline plays-inline></video>
+                    <h1 class="hero-title video-text">SYSTEM</h1>
+                </div>
+            </div> -->
+
+            <section id="section-web" class="category">
+                <h2>PAGE 1</h2>
                 <div class="gallery-frame">
                     <button class="side-scroll left-scroll"></button>
                     <div class="gallery">
@@ -88,7 +143,7 @@
             </section>
 
             <section class="category">
-                <h1>PAGE 2</h1>
+                <h2>PAGE 2</h2>
                 <div class="gallery-frame">
                     <button class="side-scroll left-scroll"></button>
                     <div class="gallery">
@@ -194,260 +249,10 @@
             </section>
 
             <section class="category">
-                <h1>PAGE 3</h1>
+                <h2>PAGE 3</h2>
                 <div class="gallery-frame">
                     <button class="side-scroll left-scroll"></button>
                     <div class="gallery">
-                        <div class="card-container hoverable coverable" tabindex="0">
-                            <div class="card">
-                                <div class="card-front">
-                                    <div class="card-content">
-                                        <h2 class="card-title">Project name</h2>
-                                        <p>Short project description</p>
-                                        <button class="flip">Description</button>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <button class="exit invisible">X</button>
-                                    <h2 class="project-title hidden">Card Back</h2>
-                                    <p class="long-desc">This is the card's back</p>
-                                    <div class="info-banner hidden">
-                                        <p class="tech-used">Technologies used: INSERT-HERE</p>
-                                        <div class="proj-status">
-                                            <a href="http://github.com" target="_blank">Check out on GitHub</a>
-                                            <p class="status">Mainteinance: maintained</p>
-                                        </div>
-                                    </div>
-                                    <button class="expand">Expand</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-container hoverable coverable" tabindex="0">
-                            <div class="card">
-                                <div class="card-front">
-                                    <div class="card-content">
-                                        <h2 class="card-title">Project name</h2>
-                                        <p>Short project description</p>
-                                        <button class="flip">Description</button>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <button class="exit invisible">X</button>
-                                    <h2 class="project-title hidden">Card Back</h2>
-                                    <p class="long-desc">This is the card's back</p>
-                                    <div class="info-banner hidden">
-                                        <p class="tech-used">Technologies used: INSERT-HERE</p>
-                                        <div class="proj-status">
-                                            <a href="http://github.com" target="_blank">Check out on GitHub</a>
-                                            <p class="status">Mainteinance: maintained</p>
-                                        </div>
-                                    </div>
-                                    <button class="expand">Expand</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-container hoverable coverable" tabindex="0">
-                            <div class="card">
-                                <div class="card-front">
-                                    <div class="card-content">
-                                        <h2 class="card-title">Project name</h2>
-                                        <p>Short project description</p>
-                                        <button class="flip">Description</button>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <button class="exit invisible">X</button>
-                                    <h2 class="project-title hidden">Card Back</h2>
-                                    <p class="long-desc">This is the card's back</p>
-                                    <div class="info-banner hidden">
-                                        <p class="tech-used">Technologies used: INSERT-HERE</p>
-                                        <div class="proj-status">
-                                            <a href="http://github.com" target="_blank">Check out on GitHub</a>
-                                            <p class="status">Mainteinance: maintained</p>
-                                        </div>
-                                    </div>
-                                    <button class="expand">Expand</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-container hoverable coverable" tabindex="0">
-                            <div class="card">
-                                <div class="card-front">
-                                    <div class="card-content">
-                                        <h2 class="card-title">Project name</h2>
-                                        <p>Short project description</p>
-                                        <button class="flip">Description</button>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <button class="exit invisible">X</button>
-                                    <h2 class="project-title hidden">Card Back</h2>
-                                    <p class="long-desc">This is the card's back</p>
-                                    <div class="info-banner hidden">
-                                        <p class="tech-used">Technologies used: INSERT-HERE</p>
-                                        <div class="proj-status">
-                                            <a href="http://github.com" target="_blank">Check out on GitHub</a>
-                                            <p class="status">Mainteinance: maintained</p>
-                                        </div>
-                                    </div>
-                                    <button class="expand">Expand</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-container hoverable coverable" tabindex="0">
-                            <div class="card">
-                                <div class="card-front">
-                                    <div class="card-content">
-                                        <h2 class="card-title">Project name</h2>
-                                        <p>Short project description</p>
-                                        <button class="flip">Description</button>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <button class="exit invisible">X</button>
-                                    <h2 class="project-title hidden">Card Back</h2>
-                                    <p class="long-desc">This is the card's back</p>
-                                    <div class="info-banner hidden">
-                                        <p class="tech-used">Technologies used: INSERT-HERE</p>
-                                        <div class="proj-status">
-                                            <a href="http://github.com" target="_blank">Check out on GitHub</a>
-                                            <p class="status">Mainteinance: maintained</p>
-                                        </div>
-                                    </div>
-                                    <button class="expand">Expand</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <button class="side-scroll right-scroll"></button>
-                </div>
-            </section>
-
-            <section class="category">
-                <h1>PAGE 4</h1>
-                <div class="gallery-frame">
-                    <button class="side-scroll left-scroll"></button>
-                    <div class="gallery">
-                        <div class="card-container hoverable coverable" tabindex="0">
-                            <div class="card">
-                                <div class="card-front">
-                                    <div class="card-content">
-                                        <h2 class="card-title">Project name</h2>
-                                        <p>Short project description</p>
-                                        <button class="flip">Description</button>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <button class="exit invisible">X</button>
-                                    <h2 class="project-title hidden">Card Back</h2>
-                                    <p class="long-desc">This is the card's back</p>
-                                    <div class="info-banner hidden">
-                                        <p class="tech-used">Technologies used: INSERT-HERE</p>
-                                        <div class="proj-status">
-                                            <a href="http://github.com" target="_blank">Check out on GitHub</a>
-                                            <p class="status">Mainteinance: maintained</p>
-                                        </div>
-                                    </div>
-                                    <button class="expand">Expand</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-container hoverable coverable" tabindex="0">
-                            <div class="card">
-                                <div class="card-front">
-                                    <div class="card-content">
-                                        <h2 class="card-title">Project name</h2>
-                                        <p>Short project description</p>
-                                        <button class="flip">Description</button>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <button class="exit invisible">X</button>
-                                    <h2 class="project-title hidden">Card Back</h2>
-                                    <p class="long-desc">This is the card's back</p>
-                                    <div class="info-banner hidden">
-                                        <p class="tech-used">Technologies used: INSERT-HERE</p>
-                                        <div class="proj-status">
-                                            <a href="http://github.com" target="_blank">Check out on GitHub</a>
-                                            <p class="status">Mainteinance: maintained</p>
-                                        </div>
-                                    </div>
-                                    <button class="expand">Expand</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-container hoverable coverable" tabindex="0">
-                            <div class="card">
-                                <div class="card-front">
-                                    <div class="card-content">
-                                        <h2 class="card-title">Project name</h2>
-                                        <p>Short project description</p>
-                                        <button class="flip">Description</button>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <button class="exit invisible">X</button>
-                                    <h2 class="project-title hidden">Card Back</h2>
-                                    <p class="long-desc">This is the card's back</p>
-                                    <div class="info-banner hidden">
-                                        <p class="tech-used">Technologies used: INSERT-HERE</p>
-                                        <div class="proj-status">
-                                            <a href="http://github.com" target="_blank">Check out on GitHub</a>
-                                            <p class="status">Mainteinance: maintained</p>
-                                        </div>
-                                    </div>
-                                    <button class="expand">Expand</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-container hoverable coverable" tabindex="0">
-                            <div class="card">
-                                <div class="card-front">
-                                    <div class="card-content">
-                                        <h2 class="card-title">Project name</h2>
-                                        <p>Short project description</p>
-                                        <button class="flip">Description</button>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <button class="exit invisible">X</button>
-                                    <h2 class="project-title hidden">Card Back</h2>
-                                    <p class="long-desc">This is the card's back</p>
-                                    <div class="info-banner hidden">
-                                        <p class="tech-used">Technologies used: INSERT-HERE</p>
-                                        <div class="proj-status">
-                                            <a href="http://github.com" target="_blank">Check out on GitHub</a>
-                                            <p class="status">Mainteinance: maintained</p>
-                                        </div>
-                                    </div>
-                                    <button class="expand">Expand</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-container hoverable coverable" tabindex="0">
-                            <div class="card">
-                                <div class="card-front">
-                                    <div class="card-content">
-                                        <h2 class="card-title">Project name</h2>
-                                        <p>Short project description</p>
-                                        <button class="flip">Description</button>
-                                    </div>
-                                </div>
-                                <div class="card-back">
-                                    <button class="exit invisible">X</button>
-                                    <h2 class="project-title hidden">Card Back</h2>
-                                    <p class="long-desc">This is the card's back</p>
-                                    <div class="info-banner hidden">
-                                        <p class="tech-used">Technologies used: INSERT-HERE</p>
-                                        <div class="proj-status">
-                                            <a href="http://github.com" target="_blank">Check out on GitHub</a>
-                                            <p class="status">Mainteinance: maintained</p>
-                                        </div>
-                                    </div>
-                                    <button class="expand">Expand</button>
-                                </div>
-                            </div>
-                        </div>
                         <div class="card-container hoverable coverable" tabindex="0">
                             <div class="card">
                                 <div class="card-front">
@@ -573,6 +378,7 @@
                 </div>
             </section>
 
+            
             <section>
                 <h1>CONTATTI</h1>
             </section>

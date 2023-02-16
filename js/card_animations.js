@@ -2,6 +2,8 @@
 
 const cards = document.querySelectorAll('.card');
 
+
+
 // code for adding all cards animations
 if(cards) cards.forEach((card) => {
 
@@ -19,6 +21,15 @@ if(cards) cards.forEach((card) => {
     if(!expandButton) {console.error('card script: expand button element not found'); return;}
     const flipButton = card.querySelector('.flip');
     if(!flipButton) {console.error('card script: flip button element not found'); return;}
+
+
+    // code for animating the card hover
+    cardContainer.addEventListener('mouseover', function cardMouseOver() {
+        cardContainer.classList.add('highlighted');
+    });
+    cardContainer.addEventListener('mouseleave', function cardMouseLeave() {
+        cardContainer.classList.remove('highlighted');
+    });
 
 
 
