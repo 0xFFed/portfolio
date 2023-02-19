@@ -267,6 +267,13 @@ section {
 
     overflow: hidden;
 }
+
+.about {
+    opacity: 0;
+    
+    animation: fade-in 1s forwards ease;
+}
+
 #about-desc {
     display: none;
 }
@@ -651,12 +658,17 @@ section {
 
         border: 2px solid var(--bright-bg);
 
-        animation: show-logo 1s 1.3s forwards linear;
+        animation: fade-in 1s 1.4s forwards linear;
     }
 
     #hero-logo-small {
         font-size: 3em;
     }
+
+    .about {
+        animation-delay: 1.4s;
+    }
+
 
     /* animations */
 
@@ -897,7 +909,7 @@ section {
         -webkit-box-shadow: 0 0 0 4px var(--dark-bg);
         box-shadow: 0 0 0 4px var(--dark-bg);
 
-        animation: show-logo 1s 3s forwards ease;
+        animation: fade-in 1s 3s forwards ease;
     }
 
     #hero-logo-big {
@@ -916,6 +928,10 @@ section {
         height: 4em;
 
         animation-delay: 3.4s;
+    }
+
+    .about {
+        animation: fade-in 1s 2.2s forwards ease;
     }
 
     #about-button {
@@ -1164,7 +1180,7 @@ section {
 /* ########## GENERIC ANIMATIONS ########## */
 
 /* Make the "ff" logo grow and appear */
-@keyframes show-logo {
+@keyframes fade-in {
     100% {
         opacity: 1;
     }
