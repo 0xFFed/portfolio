@@ -11,10 +11,11 @@
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <script defer src="./js/scroll.js"></script>
         <script defer src="./js/card_animations.js"></script>
-        <link rel="apple-touch-icon" sizes="180x180" href="./resources/icons/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./resources/icons/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="./resources/icons/favicon-16x16.png">
-        <link rel="manifest" href="./resources/icons/site.webmanifest">
+        <script defer src="./js/buttons.js"></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="./graphics/icons/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./graphics/icons/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../graphics/icons/favicon/favicon-16x16.png">
+        <link rel="manifest" href="./graphics/icons/favicon/site.webmanifest">
         <title>Fred.ef | Portfolio</title>
     </head>
 
@@ -24,12 +25,11 @@
 
             <!-- MAIN -->
 
-            <section id="hero-section" class="category">
-                <video id="loadvid" autoplay muted playsinline plays-inline>
-                    <!-- <source src="./graphics/Backgrounds/background.mp4" type="video/mp4"> -->
-                </video>
-
+            <section id="hero-section">
                 <div id="hero-title-container">
+                    <div class="hero-logo-small-cont hero-logo-cont">
+                        <p id="hero-logo-small" class="hero-logo">ff</p>
+                    </div>
                     <div id="hero-title-wrapper">
                         <h1 id="name" class="hero-title">Fred.ef</h1>
                         <div id="expanding-desc-container">
@@ -37,55 +37,63 @@
                                 <p>[</p>
                             </div>
                             <div id="expanding-desc">
-                                <h1 class="hero-title video-text">FULL STACK,</h1>
-                                <h1 class="hero-title video-text">BLOCKCHAIN,</h1>
-                                <h1 class="hero-title video-text">SYSTEM</h1>
+                                <h2 class="hero-title">Full stack</h2>
+                                <h2 class="hero-title">Blockchain</h2>
+                                <h2 class="hero-title">System</h2>
                             </div>
                             <div class="bracket">
                                 <p>]</p>
                             </div>
                         </div>
-                        <div class="pack-h">
-                            <h1 class="hero-title">&nbsp&nbspDEVELOPER</h1><h1 id="underscore" class="hero-title">&nbsp_</h1>
-                        </div>
+                        <h1 class="hero-title">DEVELOPER</h1>
                     </div>
+                    
+                    <!-- <div class="hero-text-desc"></div> -->
                 </div>
                 
                 <div id="right-panel" class="hero-side-panel">
                     <div class="hero-button-rack">
-                        <button class="hero-panel-button hoverable">
-                            <img src="./graphics/Icons/github_black.png">
+                        <button id="hero-button-1" class="hero-panel-button">
+                            <img src="./graphics/icons/github_black.png" alt="github">
                         </button>
-                        <button class="hero-panel-button hoverable">
-                            <img src="./graphics/Icons/linkedin_black.png">
+                        <button id="hero-button-2" class="hero-panel-button">
+                            <img src="./graphics/icons/linkedin_black.png" alt="linkedin">
                         </button>
-                        <button class="hero-panel-button hoverable">
-                            <img src="./graphics/Icons/discord_black.png">
+                        <button id="hero-button-3" class="hero-panel-button">
+                            <img src="./graphics/icons/discord_black.png" alt="discord tag">
                         </button>
-                        <button class="hero-panel-button hoverable">
-                            <img src="./graphics/Icons/mail_black.png">
+                        <button id="hero-button-4" class="hero-panel-button">
+                            <img src="./graphics/icons/mail_black.png" alt="email">
                         </button>
                     </div>
+                    <div class="hero-logo-big-cont hero-logo-cont">
+                        <p id="hero-logo-big" class="hero-logo">ff</p>
+                    </div>
+                    <button class="hero-scroll-button">
+                        <img id="hero-scroll-img" src="./graphics/icons/scroll-down.png" alt="scroll down">
+                    </button>
                 </div>
             </section>
 
             <!-- <div id="expanding-desc">
                 <div class="hero-title-div">
-                    <video src="./graphics/Backgrounds/vsc.mp4" autoplay loop muted playsinline plays-inline></video>
+                    <video src="./graphics/backgrounds/vsc.mp4" autoplay loop muted playsinline plays-inline></video>
                     <h1 class="hero-title video-text">WEB</h1>
                 </div>
                 <div class="hero-title-div">
-                    <video src="./graphics/Backgrounds/blocks.mp4" autoplay loop muted playsinline plays-inline></video>
+                    <video src="./graphics/backgrounds/blocks.mp4" autoplay loop muted playsinline plays-inline></video>
                     <h1 class="hero-title video-text">BLOCKCHAIN</h1>
                 </div>
                 <div class="hero-title-div">
-                    <video src="./graphics/Backgrounds/code.mp4" autoplay loop muted playsinline plays-inline></video>
+                    <video src="./graphics/backgrounds/code.mp4" autoplay loop muted playsinline plays-inline></video>
                     <h1 class="hero-title video-text">SYSTEM</h1>
                 </div>
             </div> -->
 
             <section id="section-web" class="category">
-                <h2>PAGE 1</h2>
+                <div class="category-header">
+                    <h3>WEB DEVELOPMENT</h3>
+                </div>
                 <div class="gallery-frame">
                     <button class="side-scroll left-scroll"></button>
                     <div class="gallery">
@@ -142,8 +150,10 @@
                 </div>
             </section>
 
-            <section class="category">
-                <h2>PAGE 2</h2>
+            <section id="section-blockchain" class="category">
+                <div class="category-header">
+                    <h3>BLOCKCHAIN DEVELOPMENT</h3>
+                </div>
                 <div class="gallery-frame">
                     <button class="side-scroll left-scroll"></button>
                     <div class="gallery">
@@ -249,7 +259,9 @@
             </section>
 
             <section class="category">
-                <h2>PAGE 3</h2>
+                <div class="category-header">
+                    <h3>SYSTEM PROGRAMMING</h3>
+                </div>
                 <div class="gallery-frame">
                     <button class="side-scroll left-scroll"></button>
                     <div class="gallery">
