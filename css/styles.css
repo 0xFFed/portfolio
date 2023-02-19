@@ -36,14 +36,14 @@ p, a, h1, h2, h3 {
 
 h1 {
     font-size: 3em;
-    font-weight: 100;
+    font-weight: 300;
     line-height: 0.9em;
     letter-spacing: 0.15em;
 }
 
 h2 {
     font-size: 2em;
-    font-weight: 100;
+    font-weight: 300;
     line-height: 0.9em;
     letter-spacing: 0.2em;
 }
@@ -67,10 +67,11 @@ body {
     background-attachment: fixed;
     width: 100vw;
     height: 100vh;
+    height: var(--app-height);
 
-    @media not all and (hover:hover) {
+    /* @media not all and (hover:hover) {
         height: var(--app-height);
-    }
+    } */
 }
 
 a {
@@ -96,6 +97,28 @@ button, input[type="submit"], input[type="reset"] {
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+}
+
+#median-h, #median-v {
+    background-color: red;
+
+    position: absolute;
+
+    z-index: 2;
+}
+
+#median-h {
+    height: 2px;
+    width: 100%;
+
+    top: 50%;
+}
+
+#median-v {
+    height: 100%;
+    width: 2px;
+
+    left: 50%;
 }
 
 
@@ -241,6 +264,28 @@ section {
 
     overflow: hidden;
 }
+#about-desc {
+    display: none;
+}
+
+#about-button {
+    height: 100%;
+    width: 100%;
+
+    padding: 0.7em 1.5em;
+
+    border: 2px solid var(--bright-bg);
+    border-radius: 20px;
+
+    transition: all 0.3s ease;
+}
+
+#about-button p {
+    letter-spacing: 0.3em;
+}
+
+
+/* SIDE PANEL */
 
 .hero-side-panel {
     background-color: var(--bright-bg);
@@ -580,6 +625,12 @@ section {
 /* ########## PHONES ########## */
 @media only screen and (min-width: 0px) {
 
+    /* generic */
+    .hidden-mobile {
+        display: none;
+    }
+                    
+
     /* hero-section */
     #hero-button-1 {animation-delay: 0.7s;}
     #hero-button-2 {animation-delay: 0.9s;}
@@ -771,6 +822,16 @@ section {
         letter-spacing: 0.2em;
     }
 
+    .hidden-mobile {
+        display: block;
+    }
+
+    .centering-item {
+        height: 2em;
+
+        opacity: 0;
+    }
+
 
     /* page structure */
     .category-header {
@@ -852,6 +913,18 @@ section {
         height: 4em;
 
         animation-delay: 3.4s;
+    }
+
+    #about-button {
+        border: 1px solid var(--bright-bg); 
+    }
+
+    #about-button:hover {
+        background-color: var(--bright-bg);
+    }
+    
+    #about-button:hover p {
+        color: var(--dark-text);
     }
 
     /* gallery */
@@ -963,10 +1036,12 @@ section {
     /* generic */
     h1 {
         font-size: 4em;
+        font-weight: 100;
     }
 
     h2 {
         font-size: 3em;
+        font-weight: 100;
     }
 
 
