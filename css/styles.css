@@ -155,6 +155,9 @@ section {
 
     height: 100%;
     width: 100%;
+    max-height: 100vh;
+
+    overflow: hidden;
 }
 
 #hero-title-container {
@@ -250,11 +253,14 @@ section {
 
     height: 0;
     width: 100%;
+    max-height: 40%;
 
     padding: 0 30px;
 
     border-top: 0;
     border-left: 0;
+
+    overflow: hidden;
 
     animation: grow-panel 0.8s 0.5s forwards ease-out;
 }
@@ -283,11 +289,7 @@ section {
     border-radius: 50%;
 
     animation: show-button 1.4s forwards ease;
-    transition: all 0.2s ease;
-}
-
-.hero-panel-button:hover {
-    transform: translateY(-20%)
+    transition: all 0.4s ease;
 }
 
 .hero-panel-button img {
@@ -590,7 +592,11 @@ section {
     .hero-logo-small-cont {
         height: 4em;
 
+        opacity: 0;
+
         border: 2px solid var(--bright-bg);
+
+        animation: show-logo 1s 1.3s forwards linear;
     }
 
     #hero-logo-small {
@@ -789,6 +795,7 @@ section {
     .hero-side-panel {
         height: 100%;
         width: 0;
+        max-height: 100%;
 
         padding: 30px 0;
 
@@ -804,6 +811,10 @@ section {
         max-height: 50%;
         max-width: 50px;
     } */
+
+    .hero-panel-button:hover {
+        transform: translateY(-20%)
+    }
 
     #hero-button-1 {animation-delay: 1.4s;}
     #hero-button-2 {animation-delay: 1.6s;}
@@ -935,13 +946,6 @@ section {
             padding: 30px 30px 0;
 
             border-left: 4px solid var(--dark-bg);
-        }
-    }
-
-    /* Make the "ff" logo grow and appear */
-    @keyframes show-logo {
-        100% {
-            opacity: 1;
         }
     }
 
@@ -1081,6 +1085,36 @@ section {
 
 /* ########## GENERIC ANIMATIONS ########## */
 
+/* Make the "ff" logo grow and appear */
+@keyframes show-logo {
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Makes each button appear in sequence */
+@keyframes show-button {50% {height: 50px; opacity: 0;} 100% {height: 50px; opacity: 1;}}
+
+/* Makes the hero scroll-down button move */
+@keyframes animate-scroll {
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    70% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    71% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Handle the coming-forward of the card when flipped */
 @keyframes step-forward {
     50% {
@@ -1106,29 +1140,6 @@ section {
         transform: translate(0, 0);
 
         z-index: 0;
-    }
-}
-
-/* Makes each button appear in sequence */
-@keyframes show-button {50% {height: 50px; opacity: 0;} 100% {height: 50px; opacity: 1;}}
-
-/* Makes the hero scroll-down button move */
-@keyframes animate-scroll {
-    50% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    70% {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-    71% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 
