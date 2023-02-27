@@ -188,9 +188,13 @@ section {
 
     height: 100%;
     width: 100%;
+
+    overflow: hidden;
 }
 
 #hero-title-container {
+    position: relative;
+
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
@@ -215,6 +219,10 @@ section {
     -webkit-filter: blur(0.5rem);
 
     animation: unblur-title 0.5s forwards linear;
+}
+
+.main-title {
+    transition: all 0.3s linear;
 }
 
 .hero-title {
@@ -270,30 +278,100 @@ section {
     overflow: hidden;
 }
 
-.about {
-    opacity: 0;
-    
-    animation: fade-in 1s forwards ease;
-}
-
-#about-desc {
-    display: none;
-}
-
 #about-button {
-    height: 100%;
-    width: 100%;
+    opacity: 0;
+
+    height: auto;
+    width: auto;
 
     padding: 0.7em 1.5em;
 
     border: 2px solid var(--bright-bg);
     border-radius: 20px;
-
+    
+    animation: fade-in 1s forwards ease;
     transition: all 0.3s ease;
 }
 
 #about-button p {
     letter-spacing: 0.3em;
+}
+
+#about-desc-section {
+    position: absolute;
+
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--dark-bg);
+    opacity: 0;
+
+    left: 0;
+
+    height: 100%;
+    width: 100%;
+
+    padding-bottom: 1em;
+
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out, opacity 1s ease-in;
+}
+
+#about-desc-section.about-expanded {
+    opacity: 1;
+
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+}
+
+#about-title {
+    background-color: var(--bright-bg);
+    color: var(--dark-text);
+    font-size: 1.5em;
+
+    width: 100%;
+
+    padding: 0.2em;
+
+    border-top: 3px solid var(--dark-text);
+    border-bottom: 3px solid var(--dark-text);
+}
+
+#about-desc {
+    font-size: 1.2em;
+    word-wrap: normal;
+    padding: 0.5em 0.5em;
+
+    border-top: 3px solid var(--bright-text);
+}
+
+#about-exit-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#about-exit {
+    display: flex;
+    justify-content: center;
+}
+
+#about-exit img {
+    background-color: var(--bright-bg);
+
+    max-height: 40px;
+    max-width: 40px;
+    aspect-ratio: 1;
+
+    border: 2px solid var(--bright-text);
+    border-radius: 50%;
+
+    transition: all 0.3s ease;
+}
+
+#about-exit img:hover {
+    border: 2px solid var(--dark-text);
 }
 
 
@@ -338,7 +416,9 @@ section {
 }
 
 .hero-panel-button {
-    height: 0;
+    max-height: 0;
+
+    margin: 0 5px;
 
     opacity: 0;
 
@@ -351,6 +431,9 @@ section {
 .hero-panel-button img {
     height: 100%;
     width: 100%;
+    max-height: 50px;
+    max-width: 50px;
+
     aspect-ratio: 1;
 }
 
@@ -667,7 +750,7 @@ section {
         font-size: 3em;
     }
 
-    .about {
+    #about-button {
         animation-delay: 1.4s;
     }
 
@@ -690,9 +773,6 @@ section {
 
     /* Handles the height-gain of the square brackets */
     @keyframes show-brackets {
-        80% {
-            height: 9em;
-        }
         100% {
             height: 9em;
 
@@ -735,9 +815,6 @@ section {
 
     /* Handles the height-gain of the square brackets */
     @keyframes show-brackets {
-        80% {
-            height: 8em;
-        }
         100% {
             height: 8em;
 
@@ -788,9 +865,6 @@ section {
 
     /* Handles the height-gain of the square brackets */
     @keyframes show-brackets {
-        80% {
-            height: 8.5em;
-        }
         100% {
             height: 8.5em;
 
@@ -818,9 +892,6 @@ section {
 
     /* Handles the height-gain of the square brackets */
     @keyframes show-brackets {
-        80% {
-            height: 8.5em;
-        }
         100% {
             height: 8.5em;
 
@@ -831,7 +902,7 @@ section {
 }
 
 /* ########## LAPTOP ########## */
-@media only screen and (min-width: 1024px) {
+@media only screen and ((min-width: 1024px) or (orientation: landscape)) {
 
     /* generic */
     h3 {
@@ -936,12 +1007,10 @@ section {
         animation-delay: 3.4s;
     }
 
-    .about {
-        animation: fade-in 1s 2.2s forwards ease;
-    }
-
     #about-button {
-        border: 1px solid var(--bright-bg); 
+        border: 1px solid var(--bright-bg);
+
+        animation-delay: 2s;
     }
 
     #about-button:hover {
@@ -951,6 +1020,21 @@ section {
     #about-button:hover p {
         color: var(--dark-text);
         font-weight: 500;
+    }
+
+    #about-desc-section {
+        bottom: 0;
+    
+        height: auto;
+        width: 100%;
+    
+        border-top: 3px solid var(--bright-text);
+    
+        transform: translateY(100%);
+    }
+
+    #about-desc-section.about-expanded {
+        transform: translateY(0);
     }
 
     /* gallery */
@@ -1089,9 +1173,6 @@ section {
 
     /* Handles the height-gain of the square brackets */
     @keyframes show-brackets {
-        80% {
-            height: 12.5em;
-        }
         100% {
             height: 12.5em;
 
@@ -1106,6 +1187,67 @@ section {
         }
         100% {
             width: 72%;
+        }
+    }
+}
+
+
+/* ########## LANDSCAPE PHONES ########## */
+@media only screen and (orientation: landscape) and (max-device-width: 1023px) {
+
+    /* generic */
+    h1 {
+        font-size: 2em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+    
+
+    /* hero-section */
+    .hero-logo-big-cont {
+        height: 5em;
+    }
+
+    #hero-logo-big {
+        font-size: 3.5em;
+    }
+
+    #hero-scroll-img {
+        height: 3em;
+    }
+
+
+    /* project pages */
+    .category-header {
+        height: 2.5em;
+    }
+
+
+    /* animations */
+
+     /* Handles the height-gain of the square brackets */
+     @keyframes show-brackets {
+        100% {
+            height: 7.5em;
+
+            transform: scaleY(1);
+        }
+    }
+
+    /* Make the Hero-side-panel gorw */
+    @keyframes grow-panel {
+        100% {
+            flex-grow: 1;
+
+            padding: 20px 10px 0;
+
+            border-left: 4px solid var(--dark-bg);
         }
     }
 }
@@ -1194,7 +1336,7 @@ section {
 }
 
 /* Makes each button appear in sequence */
-@keyframes show-button {50% {height: 50px; opacity: 0;} 100% {height: 50px; opacity: 1;}}
+@keyframes show-button {50% {max-height: 50px; opacity: 0;} 100% {max-height: 50px; opacity: 1;}}
 
 /* Makes the hero scroll-down button move */
 @keyframes animate-scroll {

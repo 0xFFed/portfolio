@@ -12,11 +12,12 @@
         <script defer src="./js/scroll.js"></script>
         <script defer src="./js/card_animations.js"></script>
         <script defer src="./js/buttons.js"></script>
-        <script defer src="./js/lock_orientation.js"></script>
-        <link rel="apple-touch-icon" sizes="180x180" href="./graphics/icons/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="./graphics/icons/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="../graphics/icons/favicon/favicon-16x16.png">
-        <link rel="manifest" href="./graphics/icons/favicon/site.webmanifest">
+        <script defer src="./js/section_titles.js"></script>
+        <script defer src="./js/about_button.js"></script>
+        <link rel="apple-touch-icon" sizes="180x180" href="./graphics/Icons/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./graphics/Icons/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../graphics/Icons/favicon/favicon-16x16.png">
+        <link rel="manifest" href="./graphics/Icons/favicon/site.webmanifest">
         <title>Fred.ef | Portfolio</title>
     </head>
 
@@ -35,8 +36,8 @@
                         <p id="hero-logo-small" class="hero-logo">ff</p>
                     </div>
                     <div id="hero-title-wrapper">
-                        <h1 id="name" class="hero-title">Fred.ef</h1>
-                        <div id="expanding-desc-container">
+                        <h1 id="name" class="hero-title main-title">Fred.ef</h1>
+                        <div id="expanding-desc-container" class="main-title">
                             <div class="bracket">
                                 <p>[</p>
                             </div>
@@ -49,14 +50,23 @@
                                 <p>]</p>
                             </div>
                         </div>
-                        <h1 class="hero-title">DEVELOPER</h1>
+                        <h1 class="hero-title main-title">DEVELOPER</h1>
                     </div>
-                    <div class="about">
-                        <p id="about-desc">Description</p>
-                        <button id="about-button"><p>ABOUT ME</p></button>
+                    <button id="about-button"><p>ABOUT ME</p></button>
+
+                    <div id="about-desc-section">
+                        <p id="about-title">ABOUT ME</p>
+                        <p id="about-desc">
+                            Full stack Blockchain System<br>
+                            How are you<br>
+                            This is still the description<br>
+                        </p>
+                        <div id="about-exit-cont">
+                            <button id="about-exit">
+                                <img src="./graphics/Icons/exit_black.png">
+                            </button>
+                        </div>
                     </div>
-                    
-                    <!-- <div class="hero-text-desc"></div> -->
                 </div>
                 
                 <div id="right-panel" class="hero-side-panel">
@@ -74,7 +84,7 @@
                             <img src="./graphics/Icons/mail_black.png" alt="email">
                         </button>
                     </div>
-                    <div class="hero-logo-big-cont hero-logo-cont">
+                    <div class="hero-logo-big-cont hero-logo-cont big-cont-support">
                         <p id="hero-logo-big" class="hero-logo">ff</p>
                     </div>
                     <button class="hero-scroll-button">
@@ -145,7 +155,7 @@
 
             <section id="section-blockchain" class="category">
                 <div class="category-header">
-                    <h3 id="block-title">BLOCKCHAIN DEV</h3>
+                    <h3>BLOCKCHAIN DEVELOPMENT</h3>
                 </div>
                 <div class="gallery-frame">
                     <button class="side-scroll left-scroll"></button>
