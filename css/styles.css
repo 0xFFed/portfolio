@@ -7,13 +7,6 @@
     --bright-bg: #f3f1e9;
     --dark-text: #000;
     --dark-bg: #000;
-    --standard-shadow: 0px 12px 4px 1px rgba(0, 0, 0, .3);
-    --button-text-size: 18px;
-    --small-button-text-size: 15px;
-    --icons-size: 24px;
-    --small-icons-size: 20px;
-    --title-text-size: 30px;
-    --app-height: 100%;
 }
 
 *, *::before, *::after {
@@ -161,20 +154,6 @@ section {
     scroll-snap-align: start;
 }
 
-.category-header {
-    background-color: var(--bright-bg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
-
-    padding: 1em;
-
-    border-top: 4px solid var(--dark-bg);
-    border-bottom: 4px solid var(--dark-bg);
-}
-
 
 /* hero section */
 
@@ -229,10 +208,13 @@ section {
     margin: 10px 0;
 }
 
+button .hero-title:hover {
+    color: #fff;
+    text-shadow: 0px 5px 15px #fff;
+    font-weight: 300;
+}
+
 #name {
-    /* text-decoration: underline;
-    text-decoration-thickness: 2px;
-    text-underline-offset: 4px; */
     letter-spacing: 0.4em;
 }
 
@@ -265,11 +247,20 @@ section {
 }
 
 #expanding-desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
     width: 0;
 
     overflow: hidden;
 
     animation: expand-brackets 0.7s 1.45s forwards linear;
+}
+
+#expanding-desc button {
+    padding: 0;
+    margin: -5px 0;
 }
 
 .hero-title-div {
@@ -488,6 +479,20 @@ section {
 
 
 /* gallery */
+
+.category-header {
+    background-color: var(--bright-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 1em;
+
+    border-top: 4px solid var(--dark-bg);
+    border-bottom: 4px solid var(--dark-bg);
+}
 
 .gallery-frame {
     position: relative;
