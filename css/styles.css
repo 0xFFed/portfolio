@@ -195,6 +195,7 @@ section {
 #hero-title-wrapper {
     max-height: 100%;
 
+    filter: blur(0.5rem);
     -webkit-filter: blur(0.5rem);
 
     animation: unblur-title 0.5s forwards linear;
@@ -533,6 +534,7 @@ button .hero-title:hover {
 
     aspect-ratio: 0.7 !important;
 
+    filter: brightness(1) blur(0);
     -webkit-filter: brightness(1) blur(0);
 
     border-radius: 4%;
@@ -1304,6 +1306,7 @@ button .hero-title:hover {
 }
 
 .shadowed {
+    filter: brightness(60%) blur(0.2rem);
     -webkit-filter: brightness(60%) blur(0.2rem);
     z-index: -1;
 }
