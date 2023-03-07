@@ -885,13 +885,25 @@ button .hero-title:hover {
 
     /* generic */
     h1 {
-        font-size: 3em;
+        font-size: 3.5em;
+    }
+
+    h2 {
+        font-size: 2.5em;
     }
 
 
     /* hero section */
     .bracket p {
-        font-size: 8em;
+        font-size: 9em;
+    }
+
+    .hero-logo-small-cont {
+        height: 7em;
+    }
+
+    #hero-logo-small {
+        font-size: 5em;
     }
 
 
@@ -900,7 +912,7 @@ button .hero-title:hover {
     /* Handles the height-gain of the square brackets */
     @keyframes show-brackets {
         100% {
-            height: 8.5em;
+            height: 9.5em;
 
             transform: scaleY(1);
         }
@@ -912,6 +924,10 @@ button .hero-title:hover {
 @media only screen and ((min-width: 1024px) or (orientation: landscape)) {
 
     /* generic */
+    h1 {
+        font-size: 3em;
+    }
+    
     h3 {
         font-size: 2.5em;
         letter-spacing: 0.2em;
@@ -953,6 +969,10 @@ button .hero-title:hover {
         animation: show-border 0.2s 1.45s forwards linear;
     }
 
+    .bracket p {
+        font-size: 8em;
+    }
+
     .hero-side-panel {
         height: 100%;
         width: 0;
@@ -961,16 +981,6 @@ button .hero-title:hover {
 
         animation: grow-panel 0.75s 1.45s forwards ease-out;
     }
-
-    /* .hero-button-rack {
-        flex-direction: column;
-
-        height: 50%;
-        width: auto;
-
-        max-height: 50%;
-        max-width: 50px;
-    } */
 
     .hero-panel-button:hover {
         transform: translateY(-20%)
@@ -1118,6 +1128,15 @@ button .hero-title:hover {
     @keyframes unblur-title {
         100% {
             -webkit-filter: blur(0);
+        }
+    }
+
+    /* Handles the height-gain of the square brackets */
+    @keyframes show-brackets {
+        100% {
+            height: 8.5em;
+
+            transform: scaleY(1);
         }
     }
 
