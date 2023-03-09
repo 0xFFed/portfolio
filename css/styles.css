@@ -18,7 +18,7 @@
     scroll-behavior: smooth;
 }
 
-p, a, h1, h2, h3 {
+p, a, h1, h2, h3, span {
     font-family: 'Lato', 'Raleway', 'Ubuntu', 'Sans-serif';
     color: var(--bright-text);
     white-space: nowrap;
@@ -408,6 +408,12 @@ button .hero-title:hover {
 }
 
 .hero-panel-button {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+
     max-height: 0;
 
     margin: 0 5px;
@@ -427,6 +433,27 @@ button .hero-title:hover {
     max-width: 50px;
 
     aspect-ratio: 1;
+}
+
+#button-4-pop-up {
+    position: absolute;
+    display: block;
+
+    background-color: var(--dark-bg);
+
+    text-align: center;
+
+    bottom: -60%;
+
+    padding: 0.2em 0.5em;
+
+    border-radius: 10px;
+
+    opacity: 0;
+    
+    z-index: 1;
+
+    transition: opacity 0.2s linear;
 }
 
 .hero-logo-cont {
@@ -1236,6 +1263,16 @@ button .hero-title:hover {
     
 
     /* hero-section */
+    .hero-panel-button:hover {
+        transform: translateY(0);
+    }
+
+    #button-4-pop-up {
+        font-size: 0.8em;
+        
+        bottom: -70%;
+    }
+
     .hero-logo-big-cont {
         height: 5em;
     }
