@@ -524,7 +524,7 @@ button .hero-title:hover {
 
     width: 100%;
 
-    padding: 0.3em;
+    padding: 0.4em;
 
     border-top: 4px solid var(--dark-bg);
 }
@@ -592,8 +592,6 @@ button .hero-title:hover {
     scroll-behavior: smooth;
     overflow-x: scroll;
     overflow-y: hidden;
-
-    border: 1px solid gold;
 }
 
 
@@ -788,6 +786,18 @@ button .hero-title:hover {
     transform: rotateY(180deg);
 }
 
+.unflip-button {
+    position: absolute;
+
+    top: 0.8em;
+    right: 0.8em;
+}
+
+.unflip-button img {
+    height: 40px;
+    width: 40px;
+}
+
 .card-back .card-title {
     margin-bottom: 5%;
 }
@@ -853,6 +863,10 @@ button .hero-title:hover {
     /* generic */
     .hidden-mobile {
         display: none;
+    }
+
+    .hidden-laptop {
+        display: block;
     }
                     
 
@@ -1060,6 +1074,10 @@ button .hero-title:hover {
         display: block;
     }
 
+    .hidden-laptop {
+        display: none;
+    }
+
     .centering-item {
         height: 2em;
 
@@ -1206,7 +1224,7 @@ button .hero-title:hover {
     }
 
     .highlighted~.card-container, .selected~.card-container {
-        transform:translateX(7rem);
+        transform: translateX(7rem);
     }
     
     .coverable:not(:first-child) {
@@ -1241,19 +1259,6 @@ button .hero-title:hover {
     .flip:hover {
         background-color: var(--dark-bg);
     }
-
-    /* .card-content {
-        height: 60%;
-        width: 100%;
-
-        padding: 1.5em;
-
-        transform: translateY(100%);
-    }
-
-    .highlighted .card-content {
-        transform: translateY(40%);
-    } */
 
 
     /* animations */
@@ -1344,14 +1349,6 @@ button .hero-title:hover {
         height: 85%;
     }
 
-    .highlighted~.card-container, .selected~.card-container {
-        transform:translateX(7rem);
-    }
-    
-    .coverable:not(:first-child) {
-        margin-left: -7rem;
-    }
-
 
     /* animations */
 
@@ -1379,7 +1376,7 @@ button .hero-title:hover {
     .card-container p {
         font-size: 0.8em;
     }
-    
+
 
     /* card front */
     .card-title {
@@ -1392,7 +1389,7 @@ button .hero-title:hover {
 }
 
 
-/* ########## VERY SHORT LAPTOPS ########## */
+/* ########## NETBOOKS ########## */
 @media only screen and (min-width: 1024px) and (max-height: 699px) {
 
     /* cards */
@@ -1439,7 +1436,19 @@ button .hero-title:hover {
     }
 
     h4 {
-        font-size: 1em;
+        font-size: 1.3em;
+    }
+
+    .hidden-mobile {
+        display: block;
+    }
+
+    .hidden-laptop {
+        display: block;
+    }
+
+    .hoverable:hover {
+        transform: translate(0);
     }
     
 
@@ -1480,6 +1489,15 @@ button .hero-title:hover {
         visibility: visible;
     }
 
+    .left-scroll {
+        left: auto;
+        right: 10%;
+    }
+
+    .gallery {
+        padding: 0;
+    }
+
     .category-header, .category-footer {
         height: 2.5em;
     }
@@ -1487,30 +1505,50 @@ button .hero-title:hover {
 
     /* cards */
     .card-container {
-        min-height: 95%;
+        height: 100%;
+        width: 100%;
 
-        border-radius: 10px;
+        border-radius: 1em;
+    }
+
+    .card {
+        box-shadow: none;
     }
 
     .highlighted~.card-container, .selected~.card-container {
-        transform:translateX(3rem);
+        transform: translateX(0);
     }
     
     .coverable:not(:first-child) {
-        margin-left: -3rem;
+        margin-left: 0;
+    }
+
+    .flipped {
+        transform: rotateY(180deg);
+    }
+
+
+    /* card front */
+    .card-front {
+        flex-direction: row;
     }
 
     .card-cover {
-        margin: 0.3em 0;
-        border-radius: 10px;
+        height: 95%;
+        width: auto;
+
+        margin: 0 0.5em;
+
+        border-radius: 1em;
     }
 
     .card-content {
-        padding: 0 0.5em 0.5em;
+        height: 90%;
+        padding: 0 1em;
     }
 
-    .card-content p {
-        font-size: 0.7em;
+    .underlined-title::after {
+        transform: scaleX(1);
     }
 
 
