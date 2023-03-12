@@ -294,7 +294,7 @@ button .hero-title:hover {
     transition: all 0.3s ease;
 }
 
-#about-button p {
+#about-button span {
     letter-spacing: 0.3em;
 }
 
@@ -551,12 +551,12 @@ button .hero-title:hover {
 }
 
 .side-scroll {
-    background-color: var(--bright-bg);
-
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    bottom: 1em;
 
     aspect-ratio: 1 !important;
 
@@ -588,6 +588,8 @@ button .hero-title:hover {
     width: 100%;
     height: 100%;
 
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     overflow-x: scroll;
     overflow-y: hidden;
 
@@ -611,6 +613,8 @@ button .hero-title:hover {
     
     transition: all 250ms ease;
     transform-origin: left;
+
+    scroll-snap-align: start;
 }
 
 .card {
@@ -650,7 +654,8 @@ button .hero-title:hover {
 
     border-radius: inherit;
 
-    overflow-y: scroll;
+    overflow-y: auto;
+
     backface-visibility: hidden;
 }
 
@@ -737,18 +742,22 @@ button .hero-title:hover {
     overflow: hidden;
 }
 
-.card-short-desc {
+.card-desc-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     flex-grow: 1;
+}
+
+.card-short-desc {
+    white-space: normal;
 
     padding-left: 0.2em;
-
-    white-space: normal;
 }
 
 .flip {
     background-color: var(--dark-grey);
-    color: var(--bright-text);
-    font-weight: 500;
 
     align-self: center;
 
@@ -761,6 +770,11 @@ button .hero-title:hover {
     border-radius: 20px;
 
     transition: all 0.1s linear;
+}
+
+.flip span {
+    color: var(--bright-text);
+    font-weight: 500;
 }
 
 
@@ -778,7 +792,7 @@ button .hero-title:hover {
     margin-bottom: 5%;
 }
 
-.long-desc {
+.card-long-desc {
     position: relative;
 
     white-space: normal;
@@ -1147,7 +1161,7 @@ button .hero-title:hover {
         background-color: var(--bright-bg);
     }
     
-    #about-button:hover p {
+    #about-button:hover span {
         color: var(--dark-text);
         font-weight: 500;
     }
@@ -1212,6 +1226,18 @@ button .hero-title:hover {
     }
 
     /* card front */
+    .card-front {
+        overflow: hidden;
+    }
+
+    .card-short-desc {
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+
     .flip:hover {
         background-color: var(--dark-bg);
     }
@@ -1315,7 +1341,7 @@ button .hero-title:hover {
 
     /* cards */
     .card-container {
-        height: 90%;
+        height: 85%;
     }
 
     .highlighted~.card-container, .selected~.card-container {
@@ -1336,6 +1362,62 @@ button .hero-title:hover {
 
             transform: scaleY(1);
         }
+    }
+}
+
+
+/* ########## SHORT LAPTOPS ########## */
+@media only screen and (min-width: 1024px) and (max-height: 799px) {
+
+    /* generic */
+    h4 {
+        font-size: 1.2em;
+    }
+
+    
+    /* cards */
+    .card-container p {
+        font-size: 0.8em;
+    }
+    
+
+    /* card front */
+    .card-title {
+        margin: 0.4em 0.2em 1em;
+    }
+
+    .flip span {
+        font-size: 0.9em;
+    }
+}
+
+
+/* ########## VERY SHORT LAPTOPS ########## */
+@media only screen and (min-width: 1024px) and (max-height: 699px) {
+
+    /* cards */
+    .card-container {
+        border-radius: 1em;
+    }
+
+
+    /* card front */
+    .card-cover {
+        border-radius: 1em;
+    }
+
+    .card-title {
+        margin: 0.3em 0.2em 0.8em;
+    }
+
+    .underlined-title::after {
+        height: 2.5px;
+
+        bottom: -0.4em;
+    }
+
+    .card-short-desc {
+        -webkit-line-clamp: 2;
     }
 }
 

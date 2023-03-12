@@ -17,7 +17,7 @@ leftScrollers.forEach((leftScroll) => {
             const cardBounds = card.getBoundingClientRect();
             if(card.nextElementSibling) {
                 const nextCardBounds = card.nextElementSibling.getBoundingClientRect();
-                if((cardBounds.left < galleryBounds.left) && (nextCardBounds.right >= galleryBounds.left)) {
+                if((cardBounds.left < galleryBounds.left) && (nextCardBounds.right > galleryBounds.left)) {
                     card.scrollIntoView();
                     return;
                 }
@@ -39,7 +39,7 @@ rightScrollers.forEach((rightScroll) => {
             const cardBounds = card.getBoundingClientRect();
             if(card.previousElementSibling) {
                 const prevCardBounds = card.previousElementSibling.getBoundingClientRect();
-                if((cardBounds.right > galleryBounds.right) && (prevCardBounds.right <= galleryBounds.right)) {
+                if((cardBounds.right > galleryBounds.right) && (prevCardBounds.right < galleryBounds.right)) {
                     card.scrollIntoView();
                     return;
                 }
