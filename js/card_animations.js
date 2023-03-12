@@ -11,10 +11,6 @@ if(cards) cards.forEach((card) => {
     if(!cardContainer) {console.error('card script: container element not found'); return;}
     const gallery = cardContainer.parentElement;
     if(!gallery) {console.error('card script: gallery element not found'); return;}
-    const projTitle = card.querySelector('.project-title');
-    if(!projTitle) {console.error('card script: project title element not found'); return;}
-    const infoBanner = card.querySelector('.info-banner');
-    if(!infoBanner) {console.error('card script: info banner element not found'); return;}
     const flipButton = card.querySelector('.flip');
     if(!flipButton) {console.error('card script: flip button element not found'); return;}
 

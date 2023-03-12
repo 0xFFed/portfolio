@@ -612,7 +612,6 @@ button .hero-title:hover {
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 
     height: 100%;
@@ -622,6 +621,30 @@ button .hero-title:hover {
 
     overflow-y: hidden;
     backface-visibility: hidden;
+}
+
+.card-tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    width: 100%;
+
+    margin-bottom: 0.5em;
+}
+
+.card-tags p {
+    background-color: var(--dark-grey);
+
+    font-size: 1em;
+    color: var(--bright-text);
+    font-weight: 500;
+
+    padding: 0.2em 0.5em;
+    margin-right: 0.3em;
+
+    border-radius: 10px;
 }
 
 /* card-front specific */
@@ -656,29 +679,7 @@ button .hero-title:hover {
     transition: transform 0.5s ease;
 }
 
-.card-tags {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-
-    width: 100%;
-
-    margin-bottom: 0.5em;
-}
-
-.card-tags p {
-    background-color: var(--dark-grey);
-
-    color: var(--bright-text);
-    font-weight: 500;
-
-    padding: 0.2em 0.5em;
-    margin-right: 0.3em;
-
-    border-radius: 10px;
-}
-
-.card-title, .project-title {
+.card-title {
     position: relative;
 
     width: max-content;
@@ -687,7 +688,7 @@ button .hero-title:hover {
     margin: 0.6em 0.2em 10%;
 }
 
-.card-title::after {
+.underlined-title::after {
     background: var(--dark-text);
 
     content: "";
@@ -734,33 +735,55 @@ button .hero-title:hover {
 /* card-back specific */
 
 .card-back {
-    justify-content: space-between;
-
-    padding: 2% 3%;
+    padding: 1em 1em;
 
     overflow-y: scroll; 
 
     transform: rotateY(180deg);
 }
 
+.card-back .card-title {
+    margin-bottom: 5%;
+}
+
 .long-desc {
     position: relative;
 
+    white-space: normal;
+
+    flex-grow: 1;
+
     width: 100%;
 
-    margin-bottom: 2%;
+    margin: 1em 0;
 
-    border: 1px solid green;
+    overflow-y: scroll;
 }
 
 .info-banner {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 
     width: 100%;
+}
 
-    border: 1px solid blue;
+.card-back .tag {
+    margin-top: 0.5em;
+}
+
+.card-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 1em 0;
+}
+
+.card-link img {
+    height: 2em;
+    aspect-ratio: 1 !important;
 }
 
 .proj-status {
@@ -1146,11 +1169,11 @@ button .hero-title:hover {
         margin-left: -7rem;
     }
 
-    .card-title::after {
+    .underlined-title::after {
         transform: scaleX(0);
     }
 
-    .card:hover .card-title::after {
+    .card:hover .underlined-title::after {
         transform: scaleX(1);
     }
 
