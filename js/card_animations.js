@@ -28,7 +28,7 @@ if(cards) cards.forEach((card) => {
     flipButton.addEventListener('click', () => {
         
         // adding flipped status
-        card.classList.add('flipped-zoomed');
+        card.classList.add('flipped');
         cardContainer.classList.add('selected');
         cardContainer.addEventListener('animationend', function firstAnimationEvent() {
             for(const cont of gallery.children) {
@@ -60,7 +60,7 @@ if(cards) cards.forEach((card) => {
 // Function handling the unflipping of the card
 function handleUnflipBehavior(cardContainer, card, gallery) {
     if(cardContainer.classList.contains('selected') && !cardContainer.classList.contains('maximized')) {
-        card.classList.remove('flipped-zoomed');
+        card.classList.remove('flipped');
         cardContainer.classList.add('unselected');
         cardContainer.addEventListener('animationend', function secondAnimationEvent() {
             this.removeEventListener('animationend', secondAnimationEvent);
