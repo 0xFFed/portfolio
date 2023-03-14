@@ -519,17 +519,19 @@ button .hero-title:hover {
     background-color: var(--bright-bg);
     
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
 
     width: 100%;
-
-    padding: 0.4em;
 
     border-top: 4px solid var(--dark-bg);
 }
 
 .category-header {
+    justify-content: center;
+
+    padding: 0.4em;
+
     border-bottom: 4px solid var(--dark-bg);
 }
 
@@ -592,6 +594,31 @@ button .hero-title:hover {
     scroll-behavior: smooth;
     overflow-x: scroll;
     overflow-y: hidden;
+}
+
+.category-footer {
+    padding: 0 1.5em;
+}
+
+.category-footer * {
+    color: var(--dark-text);
+}
+
+.scroll-to-section {
+    height: 100%;
+    
+    padding: 0 1em;
+
+    border-left: 1px solid var(--dark-bg);
+    border-right: 1px solid var(--dark-bg);
+}
+
+.category-selected {
+    background-color: var(--dark-bg);
+}
+
+.category-selected span {
+    color: var(--bright-text);
 }
 
 
@@ -676,7 +703,7 @@ button .hero-title:hover {
     font-weight: 500;
 
     padding: 0.2em 0.5em;
-    margin-right: 0.3em;
+    margin: 0.5em 0.3em 0 0;
 
     border-radius: 10px;
 }
@@ -687,7 +714,7 @@ button .hero-title:hover {
 .card-cover {
     width: 95%;
 
-    margin: 0.5em 0;
+    margin-top: 0.5em;
 
     border: 2px solid var(--dark-bg);
     border-radius: 1.5em;
@@ -954,6 +981,28 @@ button .hero-title:hover {
         letter-spacing: normal;
     }
 
+    h4 {
+        font-size: 1.3em;
+    }
+
+
+    /* card front */
+    .card-title {
+        margin: 0.4em 0.2em 0.8em;
+    }
+
+    .underlined-title::after {
+        bottom: -0.4em;
+    }
+
+    .card-short-desc {
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+    }
+
     
     /* animations */
 
@@ -986,7 +1035,7 @@ button .hero-title:hover {
 
 
     /* page structure */
-    .category-header, .category-footer {
+    .category-header {
         padding: 0.6em;
     }
 
@@ -1090,7 +1139,7 @@ button .hero-title:hover {
 
 
     /* page structure */
-    .category-header, .category-footer {
+    .category-header {
         padding: 0.4em;
         white-space: 1;
     }
@@ -1386,6 +1435,10 @@ button .hero-title:hover {
     .flip span {
         font-size: 0.9em;
     }
+
+    .card-short-desc {
+        -webkit-line-clamp: 2;
+    }
 }
 
 
@@ -1403,18 +1456,20 @@ button .hero-title:hover {
         border-radius: 1em;
     }
 
+    .card-content {
+        padding-bottom: 0.4em;
+    }
+
     .card-title {
         margin: 0.3em 0.2em 0.8em;
     }
 
     .underlined-title::after {
-        height: 2.5px;
-
         bottom: -0.4em;
     }
 
     .card-short-desc {
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 1;
     }
 }
 
@@ -1498,7 +1553,7 @@ button .hero-title:hover {
         padding: 0;
     }
 
-    .category-header, .category-footer {
+    .category-header {
         height: 2.5em;
     }
 
