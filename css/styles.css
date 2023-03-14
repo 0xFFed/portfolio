@@ -169,6 +169,7 @@ section {
     height: 100%;
 
     scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 
@@ -301,6 +302,7 @@ button .hero-title:hover {
 #about-desc-section {
     position: absolute;
 
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -342,6 +344,11 @@ button .hero-title:hover {
 #about-desc {
     font-size: 1.2em;
     word-wrap: normal;
+
+    flex-grow: 1;
+
+    width: 100%;
+
     padding: 0.5em 0.5em;
 
     border-top: 3px solid var(--bright-text);
@@ -640,6 +647,7 @@ button .hero-title:hover {
     transform-origin: left;
 
     scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .card {
@@ -1251,7 +1259,7 @@ button .hero-title:hover {
 
     /* gallery */
     .side-scroll {
-        visibility: hidden;
+        display: none;
     }
 
     .gallery {
@@ -1541,7 +1549,7 @@ button .hero-title:hover {
     }
 
     .side-scroll {
-        visibility: visible;
+        display: block;
     }
 
     .left-scroll {
@@ -1672,6 +1680,10 @@ button .hero-title:hover {
 
 .hidden {
     display: none;
+}
+
+.transparent {
+    visibility: hidden;
 }
 
 
