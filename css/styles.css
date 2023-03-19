@@ -654,6 +654,7 @@ button .hero-title:hover {
     
     transition: all 250ms ease;
     transform-origin: left;
+    perspective: 1000px;
 
     scroll-snap-align: start;
     scroll-snap-stop: always;
@@ -1289,8 +1290,6 @@ button .hero-title:hover {
         width: auto;
         height: 90%;
         aspect-ratio: 0.6 !important;
-
-        perspective: 1000px;
     }
 
     .card {
