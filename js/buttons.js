@@ -1,12 +1,35 @@
 // script for handling varius buttons behaviors
 
 // hero section scroll-down button
-const scrollDownButton = document.querySelector('.hero-scroll-button');
+const heroScrollDownButton = document.querySelector('#hero-scroll-down');
 const sectionWeb = document.querySelector('#section-web');
-
-if(scrollDownButton) scrollDownButton.addEventListener('click', () => {
+if(heroScrollDownButton) heroScrollDownButton.addEventListener('click', () => {
     sectionWeb.scrollIntoView();
-})
+});
+
+
+// web section scroll-down button
+const webScrollDownButton = document.querySelector('#web-scroll-down');
+const sectionBlockchain = document.querySelector('#section-blockchain');
+if(webScrollDownButton) webScrollDownButton.addEventListener('click', () => {
+    sectionBlockchain.scrollIntoView();
+});
+
+
+// blockchain section scroll-down button
+const blockchainScrollDownButton = document.querySelector('#blockchain-scroll-down');
+const sectionSystem = document.querySelector('#section-system');
+if(blockchainScrollDownButton) blockchainScrollDownButton.addEventListener('click', () => {
+    sectionSystem.scrollIntoView();
+});
+
+
+// system section scroll-down button
+const systemScrollDownButton = document.querySelector('#system-scroll-down');
+const sectionContacts = document.querySelector('#section-contacts');
+if(systemScrollDownButton) systemScrollDownButton.addEventListener('click', () => {
+    sectionContacts.scrollIntoView();
+});
 
 
 // title buttons

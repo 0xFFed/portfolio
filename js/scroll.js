@@ -105,6 +105,6 @@ if(galleryFrame && galleryFrame.length != 0) galleryFrame.forEach((frame) => {
                     else rightScroll.classList.remove('hidden');
                 }
             }
-        }, 150);
+        }, 50);
     })
 });
