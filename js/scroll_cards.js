@@ -1,4 +1,4 @@
-// script for side-scrollers, vertical scrollers and checkpoint-scroller
+// script for card-scrolling
 
 const galleryFrame = document.querySelectorAll('.gallery-frame');
 

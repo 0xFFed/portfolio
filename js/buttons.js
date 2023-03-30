@@ -1,9 +1,13 @@
 // script for handling varius buttons behaviors
 
+
+/* scrolling buttons */
+
 // hero section scroll-down button
 const heroScrollDownButton = document.querySelector('#hero-scroll-down');
 const sectionWeb = document.querySelector('#section-web');
 if(heroScrollDownButton) heroScrollDownButton.addEventListener('click', () => {
+    suspendPointer();
     sectionWeb.scrollIntoView();
 });
 
@@ -12,6 +16,7 @@ if(heroScrollDownButton) heroScrollDownButton.addEventListener('click', () => {
 const webScrollDownButton = document.querySelector('#web-scroll-down');
 const sectionBlockchain = document.querySelector('#section-blockchain');
 if(webScrollDownButton) webScrollDownButton.addEventListener('click', () => {
+    suspendPointer();
     sectionBlockchain.scrollIntoView();
 });
 
@@ -20,6 +25,7 @@ if(webScrollDownButton) webScrollDownButton.addEventListener('click', () => {
 const blockchainScrollDownButton = document.querySelector('#blockchain-scroll-down');
 const sectionSystem = document.querySelector('#section-system');
 if(blockchainScrollDownButton) blockchainScrollDownButton.addEventListener('click', () => {
+    suspendPointer();
     sectionSystem.scrollIntoView();
 });
 
@@ -28,29 +34,44 @@ if(blockchainScrollDownButton) blockchainScrollDownButton.addEventListener('clic
 const systemScrollDownButton = document.querySelector('#system-scroll-down');
 const sectionContacts = document.querySelector('#section-contacts');
 if(systemScrollDownButton) systemScrollDownButton.addEventListener('click', () => {
+    suspendPointer();
     sectionContacts.scrollIntoView();
 });
 
 
-// title buttons
+// contacts section home button
+const homeButton = document.querySelector('#contacts-home-button');
+const homeSection = document.querySelector('#hero-section');
+if(homeButton) homeButton.addEventListener('click', () => {
+    suspendPointer(1000);
+    homeSection.scrollIntoView();
+});
+
+
+
+/* title buttons */
+
 const fullStackButton = document.querySelector('#full-stack-title');
-const webSection = document.querySelector('#section-web');
 if(fullStackButton) fullStackButton.addEventListener('click', () => {
-    webSection.scrollIntoView();
+    suspendPointer();
+    sectionWeb.scrollIntoView();
 });
 
 const blockchainButton = document.querySelector('#blockchain-title');
-const blockchainSection = document.querySelector('#section-blockchain');
 if(blockchainButton) blockchainButton.addEventListener('click', () => {
-    blockchainSection.scrollIntoView();
+    suspendPointer();
+    sectionBlockchain.scrollIntoView();
 });
 
 const systemButton = document.querySelector('#system-title');
-const systemSection = document.querySelector('#section-system');
 if(systemButton) systemButton.addEventListener('click', () => {
-    systemSection.scrollIntoView();
+    suspendPointer();
+    sectionSystem.scrollIntoView();
 });
 
+
+
+/* other buttons */
 
 // mail button behavior
 const MAIL = 'fred.ef.dev@gmail.com';
@@ -69,4 +90,17 @@ if(mailButton) mailButton.addEventListener('click', () => {
             isMailCopyOn = false;
         }, 1000);
     }
-})
+});
+
+
+
+/* helper functions */
+
+// deactivates pointer-events for a brief time
+let suspendPointer = function(interval) {
+    for(const card of cards) card.parentElement.style.pointerEvents = "none";
+
+    setTimeout(() => {
+        for(const card of cards) card.parentElement.style.pointerEvents = "auto";
+    }, (interval || 500));
+}
