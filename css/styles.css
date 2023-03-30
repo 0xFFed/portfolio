@@ -174,7 +174,7 @@ section {
     height: 100%;
 
     scroll-snap-align: start;
-    /* scroll-snap-stop: always; */
+    scroll-snap-stop: always;
 }
 
 
@@ -350,7 +350,8 @@ button .hero-title:hover {
 #about-desc {
     font-size: 1.2em;
     font-weight: 300;
-    word-wrap: normal;
+    white-space: normal;
+    word-wrap: break-word;
     text-align: left;
     -webkit-user-select: text; /* Safari */
     user-select: text; /* Standard syntax */
@@ -664,7 +665,7 @@ button .hero-title:hover {
     perspective: 1000px;
 
     scroll-snap-align: start;
-    /* scroll-snap-stop: always; */
+    scroll-snap-stop: always;
 }
 
 .card {

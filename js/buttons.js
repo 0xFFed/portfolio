@@ -43,7 +43,7 @@ if(systemScrollDownButton) systemScrollDownButton.addEventListener('click', () =
 const homeButton = document.querySelector('#contacts-home-button');
 const homeSection = document.querySelector('#hero-section');
 if(homeButton) homeButton.addEventListener('click', () => {
-    suspendPointer(1000);
+    suspendPointer(1500);
     homeSection.scrollIntoView();
 });
 
@@ -102,5 +102,5 @@ let suspendPointer = function(interval) {
 
     setTimeout(() => {
         for(const card of cards) card.parentElement.style.pointerEvents = "auto";
-    }, (interval || 500));
+    }, (interval || 1000));
 }
