@@ -102,5 +102,5 @@ let suspendPointer = function(interval) {
 
     setTimeout(() => {
         for(const card of cards) card.parentElement.style.pointerEvents = "auto";
-    }, (interval || 1000));
+    }, (interval || 750));
 }
